@@ -1,10 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-<head>{% include 'modules/head.html.twig' %}</head>
+<head>{% include '@nytwig/head.html.twig' %}</head>
 
 <body>
-  <header>{% include 'modules/nav.html.twig' %}</header>
+  <header>{% include '@nytwig/nav.html.twig' %}</header>
 
   <div id="page">
     {% if error is not empty %}
@@ -19,6 +19,6 @@
     <article>{% block content %}{% endblock %}</article>
   </div>
 
-  <footer>{% include 'modules/footer.html.twig' %}</footer>
+  <footer>{% include '@nytwig/footer.html.twig' %}</footer>
 
 </body></html>
