@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<title>{{ title }}</title>
+<meta name="generator" content="nickyeoman/phpframework" />
+<meta name="description" content="{{ description }}">
+<meta name="keywords" content="{{ keywords }}">
+<meta name="author" content="{{ author }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="{{ title }}">
+<meta property="og:type" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+
+<link rel="manifest" href="site.webmanifest">
+<link rel="apple-touch-icon" href="/icon.png">
+
+<!-- Place favicon.ico in the root directory -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+{# https://developers.google.com/fonts/docs/getting_started #}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Material+Icons|Material+Icons+Outlined">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<meta name="theme-color" content="#000000">
+
+{% if wysiwyg != "show" %}
+<!-- highlightjs -->
+{# https://highlightjs.org/usage/ #}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/an-old-hope.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+{% else %}
+
+<script src="https://cdn.tiny.cloud/1/{{ tinymcekey }}/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+  selector: 'textarea',
+  skin: 'oxide-dark',
+  content_css: 'dark',
+  toolbar: 'code link styleselect bold italic bullist numlist outdent indent hr searchreplace table visualblocks visualchars charmap fullscreen',
+  plugins: 'code fullscreen lists link  hr searchreplace table visualblocks visualchars charmap'
+  });
+</script>
+{% endif %}

@@ -1,0 +1,19 @@
+{
+    "name": "nickyeoman/nytwig",
+    "description": "Twig template scaffolding",
+    "homepage": "https://www.nickyeoman.com",
+    "type": "library",
+    "license": "CC0-1.0",
+    "keywords": ["symfony","phpframework","twig"],
+    "authors": [
+        {
+            "name": "Nick Yeoman",
+            "email": "c@nickyeoman.com",
+            "homepage": "https://www.nickyeoman.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable" : true
+
+}
