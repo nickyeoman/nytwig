@@ -1,12 +1,13 @@
 <meta charset="utf-8">
-<title>{{ title }}</title>
+<title>{{ title | default('Welcome') }}</title>
 <meta name="generator" content="nickyeoman/phpframework" />
-<meta name="description" content="{{ description }}">
-<meta name="keywords" content="{{ keywords }}">
-<meta name="author" content="{{ author }}">
+
+<meta name="description" content="{{ description | default('No description given') }}">
+<meta name="keywords" content="{{ keywords | default('website') }}">
+<meta name="author" content="{{ author | default('anonymous') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta property="og:title" content="{{ title }}">
+<meta property="og:title" content="{{ title | default('Welcome') }}">
 <meta property="og:type" content="">
 <meta property="og:url" content="">
 <meta property="og:image" content="">
@@ -23,24 +24,3 @@
 <link rel="stylesheet" href="/css/main.css">
 
 <meta name="theme-color" content="#000000">
-
-{% if wysiwyg != "show" %}
-<!-- highlightjs -->
-{# https://highlightjs.org/usage/ #}
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/an-old-hope.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-
-{% else %}
-
-<script src="https://cdn.tiny.cloud/1/{{ tinymcekey }}/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script>
-  tinymce.init({
-  selector: 'textarea',
-  skin: 'oxide-dark',
-  content_css: 'dark',
-  toolbar: 'code link styleselect bold italic bullist numlist outdent indent hr searchreplace table visualblocks visualchars charmap fullscreen',
-  plugins: 'code fullscreen lists link  hr searchreplace table visualblocks visualchars charmap'
-  });
-</script>
-{% endif %}

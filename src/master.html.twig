@@ -7,14 +7,6 @@
   <header>{% include '@nytwig/nav.html.twig' %}</header>
 
   <div id="page">
-    {% if error is not empty %}
-      {% for key, val in error %}
-        <div class="error">{{ val }}</div>
-      {% endfor %}
-    {% endif %}
-    {% if notice is not empty %}
-      <div id="notice">{{  notice }}</div>
-    {% endif %}
 
     <article>{% block content %}{% endblock %}</article>
   </div>
