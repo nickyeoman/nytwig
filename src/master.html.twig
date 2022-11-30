@@ -1,16 +1,21 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-<head>{% include '@nytwig/head.html.twig' %}</head>
+<head>
+  {% include ['cms/head.html.twig', '@nytwig/head.html.twig'] %}
+</head>
 
 <body>
-  <header>{% include '@nytwig/nav.html.twig' %}</header>
+  <header> 
+      {% include ['cms/nav.html.twig', '@nytwig/nav.html.twig'] %}
+  </header>
 
   <div id="page">
-
     <article>{% block content %}{% endblock %}</article>
   </div>
 
-  <footer>{% include '@nytwig/footer.html.twig' %}</footer>
+  <footer>
+    {% include ['cms/footer.html.twig', '@nytwig/footer.html.twig'] %}
+  </footer>
 
 </body></html>
