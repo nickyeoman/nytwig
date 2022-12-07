@@ -19,6 +19,12 @@
       {% include ['cms/nav.html.twig', '@nytwig/nav.html.twig'] %}
   </header>
 
+  {% if error is not empty %}
+    {% for key, val in error %}
+      <div class="error">{{ val }}</div>
+    {% endfor %}
+  {% endif %}
+
   <!-- Main Content Of The Page -->
   <div id="page">
     <aside id="beforeContent">{% block asidebefore %}{% endblock %}</aside>
