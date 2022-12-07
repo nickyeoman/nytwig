@@ -7,19 +7,19 @@
 
 <body>
 
-  <!-- Administration Panel -->
-  <aside id="adminbar">
-    {% if adminbar == 'show' %}
+  {# Administration Panel #}
+  {% if adminbar|default('hide') == 'show' %}
+    <aside id="adminbar">
       {% include '@nytwig/adminbar.html.twig' %}
-    {% endif %}
-  </aside>  
+    </aside>  
+  {% endif %}
 
-  <!-- Page Header -->
+  {# Page Header #}
   <header> 
       {% include ['cms/nav.html.twig', '@nytwig/nav.html.twig'] %}
   </header>
 
-  {% if error is not empty %}
+  {% if error|default is not empty %}
     {% for key, val in error %}
       <div class="error">{{ val }}</div>
     {% endfor %}
@@ -32,7 +32,7 @@
     <aside id="afterContent">{% block asideafter %}{% endblock %}</aside>
   </div>
 
-  <!-- Page Footer -->
+  {# Page Footer #}
   <footer>
     {% include ['cms/footer.html.twig', '@nytwig/footer.html.twig'] %}
   </footer>
