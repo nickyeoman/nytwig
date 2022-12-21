@@ -7,13 +7,6 @@
 
 <body>
 
-  {# Administration Panel #}
-  {% if adminbar|default('hide') == 'show' %}
-    <aside id="adminbar">
-      {% include '@nytwig/adminbar.html.twig' %}
-    </aside>  
-  {% endif %}
-
   {# Page Header #}
   <header> 
       {% include ['cms/nav.html.twig', '@nytwig/nav.html.twig'] %}
