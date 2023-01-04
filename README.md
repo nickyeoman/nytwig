@@ -1,6 +1,7 @@
 # Nix Twig Templates
 
-This is the scaffolding you use for your web projects.  It is based but heavly modifed on html5boilerplate.
+This is the scaffolding Nick uses for his web projects.  
+It is based, but heavly modifed, on html5boilerplate.
 
 * [Github](https://github.com/nickyeoman/nytwig)
 * [Packagist](https://packagist.org/packages/nickyeoman/nytwig)
@@ -33,3 +34,7 @@ paths:
 <p>Content Here</p>
 {% endblock %}
 ```
+
+## Overrides
+
+In your view directly create a folder named 'cms' and create the file you want to override there with the same name.
