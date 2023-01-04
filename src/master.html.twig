@@ -1,15 +1,21 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
+{% include 'cms/mod_paco.html.twig' ignore missing %}
+
 <head>
-  {% include ['cms/head.html.twig', '@nytwig/head.html.twig'] %}
+  {% include ['cms/mod_head.html.twig', '@nytwig/head.html.twig'] %}
 </head>
 
-<body>
+<body id="{{ pageid }}">
 
   {# Page Header #}
   <header> 
-      {% include ['cms/nav.html.twig', '@nytwig/nav.html.twig'] %}
+    {% block headerbefore %}{% endblock %}
+    {% include 'cms/mod_lance.html.twig' ignore missing %}
+    {% include ['cms/mod_nav.html.twig', '@nytwig/nav.html.twig'] %}
+    {% include 'cms/mod_rod.html.twig' ignore missing %}
+    {% block headerafter %}{% endblock %}
   </header>
 
   {% if error|default is not empty %}
@@ -20,14 +26,37 @@
 
   <!-- Main Content Of The Page -->
   <div id="page">
-    <aside id="beforeContent">{% block asidebefore %}{% endblock %}</aside>
-    <article>{% block content %}{% endblock %}</article>
-    <aside id="afterContent">{% block asideafter %}{% endblock %}</aside>
+    <div class="container">
+
+      {% include 'cms/mod_lance.html.twig' ignore missing %}
+      <aside id="beforeContent">
+        {% include 'cms/mod_henry.html.twig' ignore missing %}
+        {% block asidebefore %}{% endblock %}
+      </aside>
+
+      <article>
+        {% include 'cms/mod_alex.html.twig' ignore missing %}
+        {% block content %}{% endblock %}
+        {% include 'cms/mod_simon.html.twig' ignore missing %}
+      </article>
+
+      <aside id="afterContent">
+        {% include 'cms/mod_fred.html.twig' ignore missing %}
+        {% block asideafter %}{% endblock %}
+        {% include 'cms/mod_kat.html.twig' ignore missing %}
+      </aside>
+
+    </div>
   </div>
 
   {# Page Footer #}
   <footer>
-    {% include ['cms/footer.html.twig', '@nytwig/footer.html.twig'] %}
+    {% block footerbefore %}{% endblock %}
+    {% include 'cms/mod_brick.html.twig' ignore missing %}
+    {% include ['cms/mod_footer.html.twig', '@nytwig/footer.html.twig'] %}
+    {% include 'cms/mod_stone.html.twig' ignore missing %}
+    {% block footerafter %}{% endblock %}
   </footer>
 
+{% include ['cms/mod_foot.html.twig', '@nytwig/foot.html.twig'] %}
 </body></html>
