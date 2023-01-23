@@ -1,0 +1,16 @@
+{% if admin == 'admin' %}
+    {% if adminbar == true %}
+        <div id="adminbar">
+            <ul>
+                <li><em>Admin Menu</em></li>
+                <li><a href="/admin">Admin Dashboard</a></li>
+                <li><a href="/page/admin">Pages</a></li>
+                <li><a href="/contact/admin">Manage Messages</a></li>
+                <li><a href="/logs">Logs</a></li>
+                <li><a href="/page/admincomment">Edit Comments</a></li>
+                <li><a href="/user/admin">Users</a></li>
+                <li><a href="/spamwords">Spam Phrases</a></li>
+            </ul>
+        </div>
+    {% endif %}
+{% endif %}

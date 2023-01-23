@@ -1,13 +1,20 @@
-<div class="container flexbox">
-  <div id="logo"><a href="/">LOGO</a></div>
+<div class="container">
+  <div id="logo"><a href="/">Logo Goes Here</a></div>
 
   <nav>
 
     <ul>
 
       <li><a href="/">Home</a></li>
-      <li><a href="/user/index">Login/Register</a></li>
-
+      <li><a href="/contact">Contact Us</a></li>
+      {% if loggedin %}
+        <li><a href="/logout/">Logout</a></li>
+      {% else %}
+        <li><a href="/login/">Login</a></li>
+      {% endif %}
+      {% if admin == 'admin' %}
+        <li><a href="/admin">Admin</a></li>
+      {% endif %}
     </ul>
 
   </nav>

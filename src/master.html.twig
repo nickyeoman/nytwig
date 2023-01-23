@@ -18,27 +18,35 @@
     {% block headerafter %}{% endblock %}
   </header>
 
-  {% if error|default is not empty %}
-    {% for key, val in error %}
-      <div class="error">{{ val }}</div>
-    {% endfor %}
-  {% endif %}
-
   <!-- Main Content Of The Page -->
   <div id="page">
     <div class="container">
-
-      {% include 'cms/mod_lance.html.twig' ignore missing %}
+      
       <aside id="beforeContent">
+        {% include ['cms/adminbar.html.twig', '@nytwig/adminbar.twig'] %}
         {% include 'cms/mod_henry.html.twig' ignore missing %}
         {% block asidebefore %}{% endblock %}
       </aside>
 
-      <article>
-        {% include 'cms/mod_alex.html.twig' ignore missing %}
-        {% block content %}{% endblock %}
-        {% include 'cms/mod_simon.html.twig' ignore missing %}
-      </article>
+      <div class="middle">
+        {% if error|default is not empty %}
+          {% for key, val in error %}
+            <div class="error">{{ val }}</div>
+          {% endfor %}
+        {% endif %}
+
+        {% if notice|default is not empty %}
+          {% for key, val in notice %}
+            <div class="notice">{{ val }}</div>
+          {% endfor %}
+        {% endif %}
+
+        <article>
+          {% include 'cms/mod_alex.html.twig' ignore missing %}
+          {% block content %}{% endblock %}
+          {% include 'cms/mod_simon.html.twig' ignore missing %}
+        </article>
+      </div>
 
       <aside id="afterContent">
         {% include 'cms/mod_fred.html.twig' ignore missing %}
