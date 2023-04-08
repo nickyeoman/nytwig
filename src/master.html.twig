@@ -7,7 +7,7 @@
   {% include ['cms/mod_head.html.twig', '@nytwig/head.html.twig'] %}
 </head>
 
-<body id="{{ pageid }}">
+<body id="{{ pageid | default('pageid') }}">
 
   {# Page Header #}
   <header> 

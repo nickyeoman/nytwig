@@ -7,12 +7,12 @@
 
       <li><a href="/">Home</a></li>
       <li><a href="/contact">Contact Us</a></li>
-      {% if loggedin %}
+      {% if loggedin|default(false) %}
         <li><a href="/logout/">Logout</a></li>
       {% else %}
         <li><a href="/login/">Login</a></li>
       {% endif %}
-      {% if admin == 'admin' %}
+      {% if admin|default(false) == 'admin' %}
         <li><a href="/admin">Admin</a></li>
       {% endif %}
     </ul>

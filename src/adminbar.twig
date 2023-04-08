@@ -1,5 +1,5 @@
-{% if admin == 'admin' %}
-    {% if adminbar == true %}
+{% if admin|default(false) == 'admin' %}
+    {% if adminbar|default(false) == true %}
         <div id="adminbar">
             <ul>
                 <li><em>Admin Menu</em></li>
