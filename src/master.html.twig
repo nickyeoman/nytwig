@@ -9,6 +9,7 @@
 
 <body id="{{ pageid | default('pageid') }}">
 
+  {% include ['cms/debug.html.twig', '@nytwig/debug.twig'] %}
   {# Page Header #}
   <header> 
     {% block headerbefore %}{% endblock %}

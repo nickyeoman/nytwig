@@ -1,0 +1,64 @@
+<style>
+    /* Basic styling */
+    #debug {
+      padding: 20px;
+      border: 1px solid red;
+    }
+    .accordion {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .accordion-item {
+        background-color: #f4f4f4;
+        margin-bottom: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .accordion-header {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #e0e0e0;
+    }
+
+    .accordion-content {
+        padding: 10px;
+        display: none;
+    }
+
+    .accordion-item.expanded .accordion-content {
+        display: block;
+    }
+
+    .close-button {
+        float: right;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 1;
+    }
+</style>
+
+<div id="debug">
+    <span class="close-button" onclick="document.getElementById('debug').style.display = 'none';">&times;</span>
+    <h1>Debug Area</h1>
+    <ul class="accordion">
+        {% if debug is not empty %}
+            {% for section, messages in debug %}
+                <li class="accordion-item">
+                    <div class="accordion-header" onclick="this.parentNode.classList.toggle('expanded')">
+                        <h2>{{ section }}</h2>
+                    </div>
+                    <div class="accordion-content">
+                        {% for message in messages %}
+                            <div>
+                                <h3>{{ message.title }}</h3>
+                                {{ message.string|raw }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
