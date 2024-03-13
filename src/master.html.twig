@@ -24,8 +24,8 @@
     <div class="container">
       
       <aside id="beforeContent">
-        {% include ['cms/adminbar.html.twig', '@nytwig/adminbar.twig'] %}
         {% include 'cms/mod_henry.html.twig' ignore missing %}
+        {% include '@cms/admin/sidebar.html.twig' ignore missing %}
         {% block asidebefore %}{% endblock %}
       </aside>
 
