@@ -1,0 +1,9 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    paths:
+        '%kernel.project_dir%/vendor/nickyeoman/nytwig/src': 'nytwig'
+
+when@test:
+    twig:
+        strict_variables: true
+
